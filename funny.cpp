@@ -1,9 +1,6 @@
 #include <algorithm>
-#include <cassert>
-#include <cstdlib>
 #include <iostream>
 #include <set>
-#include <string.h>
 #include <vector>
 using namespace std;
 
@@ -21,7 +18,7 @@ generateCombinationsInternal(vector<pair<ll, bool>> &entries, ll crrVal) {
         auto &next = entries[i];
         ll value = next.first;
         ll available = next.second;
-        if (available <= 0)
+        if (!available)
             continue;
 
         ll nextVal = crrVal - value;
